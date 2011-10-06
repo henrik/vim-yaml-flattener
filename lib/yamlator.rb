@@ -15,7 +15,7 @@ class YAMLator
       @data = data
       @hash = YAML.load(@data)
     else
-      @data = preamble
+      @data = preamble.to_s
       @hash = {}
     end
   end
