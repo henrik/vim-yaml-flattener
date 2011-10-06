@@ -22,7 +22,7 @@ execute 'rubyfile ' . s:libfile
 ruby << EOF
 
   def yaml_toggle_flatness
-    if read_buffer.match(/^[^:]+\.[^:]+:/)
+    if read_buffer.match(/^\w+\./)
       replace_buffer YAMLator.new(read_buffer).to_nested_yaml
     else
       replace_buffer YAMLator.new(read_buffer).to_flat_yaml
