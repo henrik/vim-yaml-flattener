@@ -44,6 +44,7 @@ EOF
 
 function! s:YAMLToggleFlatness()
   ruby yaml_toggle_flatness
+  normal! gg
 endfunction
 
 command! YAMLToggleFlatness call <SID>YAMLToggleFlatness()
