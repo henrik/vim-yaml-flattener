@@ -1,4 +1,4 @@
-if exists("g:loaded_YAMLFlattenerREMOVEME")
+if exists("g:loaded_YAMLFlattener")
   finish
 endif
 
