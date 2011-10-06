@@ -15,7 +15,7 @@ to a flat format
 and back again.
 
 This is handy with Ruby on Rails .yml translation files.
-Convert them to flat format to search and edit more easily, then back to flat format for compatibility with Rails i18n and other tools.
+Convert them to flat format to search and edit more easily, then back to nested format for compatibility with Rails i18n and other tools.
 
 Just open a YAML file and hit ⌘r or <leader>r. Again to go back.
 
