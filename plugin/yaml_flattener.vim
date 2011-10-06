@@ -46,7 +46,6 @@ function! s:YAMLToggleFlatness()
   ruby yaml_toggle_flatness
 endfunction
 
-
 command! YAMLToggleFlatness call <SID>YAMLToggleFlatness()
 
 if !hasmapto("YAMLToggleFlatness") && has("autocmd")
