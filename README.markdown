@@ -23,7 +23,7 @@ Based on my [YAMLator lib](https://gist.github.com/293581).
 
 ## Caveats
 
-Keys will be sorted on each conversion. You might consider this a feature - convert the file twice to sort it.
+Keys will be sorted on each conversion. You might consider this a feature – convert the file twice to sort it.
 
 Any comments in the beginning of the file are kept, but inline comments are lost.
 
