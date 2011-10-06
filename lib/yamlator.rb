@@ -5,8 +5,7 @@
 $KCODE = 'u'
 
 require "yaml"
-require "rubygems"
-require "ya2yaml"  # Dumps with unescaped UTF-8.
+require File.join(File.dirname(__FILE__), "ya2yaml")  # Dumps with unescaped UTF-8.
 
 class YAMLator
 
