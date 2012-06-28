@@ -43,8 +43,11 @@ ruby << EOF
 EOF
 
 function! s:YAMLToggleFlatness()
+  " If we're not in the beginning when we run this, we might get errors.
+  :1
   ruby yaml_toggle_flatness
-  normal! gg
+  :$d
+  :1
 endfunction
 
 command! YAMLToggleFlatness call <SID>YAMLToggleFlatness()
