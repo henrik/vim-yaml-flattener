@@ -20,13 +20,15 @@ class YAMLator
   end
 
   def to_yaml
-    [ preamble, @hash.ya2yaml ].join
+    yaml = [ preamble, @hash.ya2yaml ].join
+    yaml.gsub!(/ +$/, '')
+    yaml
   end
 
   def to_flat_yaml
     tree = flatten_tree(@hash)
-    flat = tree.inject({}) { |hash, (chain, leaf)| hash.merge(chain.join(".") => leaf) }
-    [ preamble, flat.ya2yaml ].join
+    @hash = tree.inject({}) { |hash, (chain, leaf)| hash.merge(chain.join(".") => leaf) }
+    to_yaml
   end
 
   def to_nested_yaml
