@@ -10,13 +10,6 @@ if !has("ruby")
   finish
 endif
 
-let g:YAMLFlattener_key = '<Leader>r'
-
-" MacVim and not CLI.
-if has("gui_macvim") && has("gui_running")
-  let g:YAMLFlattener_key = '<D-r>'
-end
-
 " Thanks to https://github.com/hotchpotch/meta_framework-vim/blob/95eb37317eef061cec75c308eae273cc4256e1aa/meta_framework.vim#L23
 let s:libfile = fnamemodify(resolve(expand('<sfile>:p')), ':p:h') . '/../lib/yamlator.rb'
 execute 'rubyfile ' . s:libfile
@@ -55,5 +48,12 @@ endfunction
 command! YAMLToggleFlatness call <SID>YAMLToggleFlatness()
 
 if !hasmapto("YAMLToggleFlatness") && has("autocmd")
-  exec 'au FileType yaml map <buffer> ' . g:YAMLFlattener_key . ' :YAMLToggleFlatness<CR>'
+
+  exec 'au FileType yaml map <buffer> <leader>r :YAMLToggleFlatness<CR>'
+
+  " MacVim and not CLI.
+  if has("gui_macvim") && has("gui_running")
+    exec 'au FileType yaml map <buffer> <D-r> :YAMLToggleFlatness<CR>'
+  end
+
 endif
