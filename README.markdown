@@ -17,7 +17,7 @@ and back again.
 This is handy with Ruby on Rails .yml translation files.
 Convert them to flat format to search and edit more easily, then back to nested format for compatibility with Rails i18n and other tools.
 
-Just open a YAML file and hit `⌘r` or `<leader>r`. Again to go back.
+Just open a YAML file and hit `<leader>r` (MacVim also supports `⌘r`). Again to go back.
 
 Based on my [YAMLator lib](https://gist.github.com/293581).
 

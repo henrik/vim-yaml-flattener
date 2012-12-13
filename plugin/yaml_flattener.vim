@@ -11,7 +11,9 @@ if !has("ruby")
 endif
 
 let g:YAMLFlattener_key = '<Leader>r'
-if has("gui_running")
+
+" MacVim and not CLI.
+if has("gui_macvim") && has("gui_running")
   let g:YAMLFlattener_key = '<D-r>'
 end
 
