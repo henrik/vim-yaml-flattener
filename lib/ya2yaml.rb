@@ -25,7 +25,7 @@ class Ya2YAML
 	end
 
 	def _ya2yaml(obj)
-		throw 'set $KCODE to "UTF8".' if $KCODE != 'UTF8'
+		throw 'set $KCODE to "UTF8".' if $KCODE != 'UTF8' && RUBY_VERSION < '1.9'
 		'--- ' + emit(obj,1) + "\n"
 	end
 
