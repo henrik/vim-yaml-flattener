@@ -2,7 +2,7 @@
 # Helps you update Rails i18n YAML files programmatically, to be used e.g. for
 # editor extraction tools.
 
-$KCODE = 'u'
+$KCODE = 'u' if RUBY_VERSION < '1.9.0'
 
 require "yaml"
 require File.join(File.dirname(__FILE__), "ya2yaml")  # Dumps with unescaped UTF-8.
