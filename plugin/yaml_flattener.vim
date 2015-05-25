@@ -6,7 +6,7 @@ let g:loaded_YAMLFlattener = 1
 
 if !has("ruby")
     echohl ErrorMsg
-    echon "Sorry, the YAML Flattener plugin requires Ruby support."
+    echon "Sorry, the YAML Flattener plugin requires a Vim compiled with Ruby support."
   finish
 endif
 
