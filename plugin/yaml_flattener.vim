@@ -40,9 +40,14 @@ EOF
 function! s:YAMLToggleFlatness()
   " If we're not in the beginning when we run this, we might get errors.
   :1
-  ruby yaml_toggle_flatness
-  :$d
-  :1
+
+  try
+    ruby yaml_toggle_flatness
+    :$d
+    :1
+  catch /SyntaxError/
+    echoerr "This YAML has a syntax error! Aborting."
+  endtry
 endfunction
 
 command! YAMLToggleFlatness call <SID>YAMLToggleFlatness()
